@@ -1,0 +1,52 @@
+{% extends "ranktc/base.html" %}
+{% block content %}
+{% if members %}
+    <table class="table table-striped table-bordered table-condensed">
+    <caption class="text-center"> <h1> {{ data.contestType }} Ratings Table </h1></caption>
+    <thead>
+        <tr>
+            <td class="text-center fit-cell">#</td>
+            <td class="text-center fit-cell">Position</td>
+            <td>Handle</td>
+            <td class="text-center fit-cell">Ratings</td>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for member in members %}
+    <tr>
+        <td class="text-center fit-cell">{{ forloop.counter }}</td>
+        <td class="tbl-prevrank-icon text-center fit-cell"><span class="span.rank-equal"></span> </td>
+        <td><a href="https://www.topcoder.com/members/{{ member.handle }}">{{ member.handle }}</a></td>
+        <td class="text-center fit-cell">{{ member.rating }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    <caption class="text-right" style="float-right;caption-side: bottom;">Updated on {{ data.updated_on }} </caption>
+
+
+    </table>
+{% else %}
+    <p>No member available yet.</p>
+{% endif %}
+    <div class="social">
+
+        <span class="google"> <g:plusone  size="medium" annotation="inline"></g:plusone> </span>
+
+
+        <span id="tc-share" class="fb-btn-overview facebook"></span>
+
+    <!-- Place this tag where you want the +1 button to render -->
+
+
+    </div>
+
+    <input type="hidden" value="{{ data.contestType }}" id="contest_type">
+    <input type="hidden" value="{{ data.text_updated_date }}" id="updated_date">
+    <input type="hidden" value="{{ data.updated_on }}" id="updated_date_human">
+    <input type="hidden" value="{{ data.base_url }}" id="base_url">
+    <input type="hidden" value="{{data.google_plus_url}}" id="google_base_url">
+
+
+
+{% endblock %}

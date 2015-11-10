@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Topcoder Rankings</title>
+
+    <!-- Bootstrap -->
+      {% load staticfiles %}
+      <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+      <link href="{% static "css/styles.css" %}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+  </head>
+  <body>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1488026451500368',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+  {% include "ranktc/header.html" %}
+
+<script language="javascript" type="text/javascript">
+function share_facebook(link, picture, caption, description) {
+        FB.ui({
+  method: 'feed',
+  link: link,
+    caption: caption,
+    picture: picture,
+    description: description
+}, function(response){});
+
+    }
+</script>
+  <div class="container">
+   {% block content %}
+    <h1>Hello, world!</h1>
+   {% endblock %}
+  </div>
+
+  {% include "ranktc/footer.html" %}
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    {% load staticfiles %}
+    <script src="{% static "js/jquery-1.11.3.min.js" %}"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    {% load staticfiles %}
+    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/scripts.js" %}"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+{% extends "ranktc/base.html" %}
+{% block content %}
+
+
+    <div class="row">
+     <div class="col-md-12">
+         <h1 class="text-center">Current Ratings Tables </h1>
+     </div>
+    </div>
+    <div class="row top-buffer">
+
+        <div class="col-md-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="/ratings/Design">Design</a></h3>
+                </div>
+                <div class="panel-body">
+                {{ data.num_design_rated }} rated members
+                </div>
+            </div>
+        </div>
+
+         <div class="col-md-3">
+             <div class="panel panel-info">
+                 <div class="panel-heading">
+                    <h3 class="panel-title"><a href="/ratings/First2Finish">First to Finish</a></h3>
+                </div>
+                 <div class="panel-body">
+                {{ data.num_first2finish_rated }} rated members
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="/ratings/Development">Development</a></h3>
+                </div>
+                <div class="panel-body">
+                {{ data.num_development_rated }} rated members
+                </div>
+            </div>
+        </div>
+
+         <div class="col-md-3">
+             <div class="panel panel-info">
+                 <div class="panel-heading">
+                    <h3 class="panel-title"><a href="/ratings/Code">Code</a></h3>
+                </div>
+                 <div class="panel-body">
+                {{ data.code_rated }} rated members
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="/ratings/Assembly Competition">Assembly</a></h3>
+                </div>
+                <div class="panel-body">
+                {{ data.num_assembly_rated }} rated members
+                </div>
+            </div>
+        </div>
+
+         <div class="col-md-6">
+             <div class="panel panel-info">
+                 <div class="panel-heading">
+                    <h3 class="panel-title"><a href="/ratings/Architecture">Architecture</a></h3>
+                </div>
+                 <div class="panel-body">
+                {{ data.num_architecture_rated }} rated members
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

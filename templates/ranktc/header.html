@@ -1,0 +1,37 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="text-center">RatingDream</h1>
+
+        <p class="text-center">A revamped rating system for Topcoder</p>
+
+    </div>
+
+
+</div>
+
+
+{% if  not data.is_home %}
+<div class="container">
+ <ul class="nav nav-tabs">
+  <li class="active" role="presentation"><a href="/">Home</a> </li>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Ratings Tables <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+
+        <li><a href="/ratings/Design">Design</a></li>
+        <li><a href="/ratings/First2Finish">First to Finish</a></li>
+        <li><a href="/ratings/Development">Development</a></li>
+        <li><a href="/ratings/Code">Code</a></li>
+        <li><a href="/ratings/Assembly Competition">Assembly</a></li>
+        <li><a href="/ratings/Architecture">Architecture</a></li>
+
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+
+{% endif %}

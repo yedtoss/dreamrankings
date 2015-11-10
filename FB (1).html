@@ -1,0 +1,60 @@
+<html>
+ <head>
+
+ </head>
+<body>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1488026451500368',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+  </script>
+  
+
+	 
+	<p> Hello World! </p>
+	<fb:login-button autologoutlink="true" onlogin="OnRequestPermission();">
+</fb:login-button>
+	<button name="my_full_name" onclick="ShowMyName()" value="My Name" > Click me! </button>
+<script language="javascript" type="text/javascript">
+function ShowMyName() {
+        FB.ui({
+  method: 'feed',
+  link: 'http://192.81.211.62:8000/ratings',
+}, function(response){});
+         
+    }
+</script>
+
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+   <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+  </div>
+
+   
+   	<!-- Place this tag where you want the +1 button to render -->
+<g:plusone annotation="inline"></g:plusone>
+ </body>
+</html>
